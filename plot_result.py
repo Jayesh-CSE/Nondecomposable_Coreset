@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+
+coreset_size = [25, 50, 100, 150, 175, 200]
+
+#Lewis f1 score final : [[0.6590800430062582], [0.693523275254351], [0.6993112395952089], [0.7034227168992284], [0.7059130170753983], [0.7171821962113544]]
+
+#Uniform f1 score final: [[0.6514838837325786], [0.6869782803787216], [0.7082457847041483], [0.5335772694925682], [0.4890192803320253], [0.718810251855912]]
+
+
+
+f1_score_lewis = [0.6569337332920175, 0.6947845581457629, 0.7072479556471901, 0.7108926880315598, 0.7159752535849542, 0.7263211656293096]
+f1_score_uniform = [0.6622676722150775, 0.698815200870869, 0.7156202708385608, 0.5332404241313466, 0.4973093855232511, 0.725985067746544]
+
+plt.plot(coreset_size, f1_score_lewis , '--b', marker='o', label = 'Stratified Lewis Score')
+plt.plot(coreset_size, f1_score_uniform , '--r', marker='o', label = 'Stratified Uniform')
+
+#One_vs_Rest = [1, 2, 3, 4, 5, 6, 7]
+#f1_score_lewis = [0.6317533093245481, 0.6956158141084168, 0.5640398151719761, 0.0065127536623001995, 0.05958556647846149, 0.22493966954255948, 0.26987632753423124]
+#f1_score_uniform = [0.427458595850626, 0.4539330878634874, 0.12656628772159767, 0.017029250724680114, 0.03494875031925591, 0.06353805894863242, 0.0803015957574483]
+
+#plt.plot(One_vs_Rest, f1_score_lewis , '--b', marker='o', label = 'Stratified Lewis Score')
+#plt.plot(One_vs_Rest, f1_score_uniform , '--r', marker='o', label = 'Stratified Uniform')
+
+plt.xlabel('coreset_size')
+plt.ylabel('Average F1-Score')
+plt.legend()
+plt.show()
